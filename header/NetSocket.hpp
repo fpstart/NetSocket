@@ -23,8 +23,10 @@ namespace FRPC
         public:
           bool read(char* text);
           bool write(char* text);
-          &AcceptObj operator<<(char*);
-          &AcceptObj operator>>(char*);
+          &AcceptObj operator<<(char* text);
+          &AcceptObj operator<<(unsigned int text);
+          &AcceptObj operator>>(char* text);
+          &AcceptObj operator>>(unsigned int text);
         private:
           int linkfd;
           sockaddr_in6 address;
