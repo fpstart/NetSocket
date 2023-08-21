@@ -18,6 +18,8 @@ namespace FRPC
       //bool setAddr(char* addr,unsigned short port);
       //bool setAddr(char* addr);
       bool open();
+      bool close();
+      bool isClose();
       class AcceptObj
       {
         public:
@@ -27,6 +29,8 @@ namespace FRPC
           &AcceptObj operator<<(unsigned int text);
           &AcceptObj operator>>(char* text);
           &AcceptObj operator>>(unsigned int text);
+          bool close();
+          bool isClose();
         private:
           int linkfd;
           sockaddr_in6 address;
