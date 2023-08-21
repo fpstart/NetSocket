@@ -14,7 +14,7 @@ namespace FRPC
       NetSocket(sockaddr_in6 addr);
       bool setConfig(bool isUDP,bool isServer);
       bool setAddr(sockaddr_in6 addr);
-      bool setAddr(in_addr6 addr,unsigned short port);
+      //bool setAddr(in_addr6 addr,unsigned short port);
       //bool setAddr(char* addr,unsigned short port);
       //bool setAddr(char* addr);
       bool open();
