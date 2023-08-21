@@ -21,8 +21,10 @@ namespace FRPC
       class AcceptObj
       {
         public:
-          read(char* text,const int len);
-          write(char* text,const int len);
+          bool read(char* text);
+          bool write(char* text);
+          &AcceptObj operator<<(char*);
+          &AcceptObj operator>>(char*);
         private:
           int linkfd;
           sockaddr_in6 address;
