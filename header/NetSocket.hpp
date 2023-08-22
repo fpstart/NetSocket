@@ -39,5 +39,9 @@ namespace FRPC
     private:
       int socketfd;
       sockaddr_in6 address;
+      bool openTCPServer();
+      bool openTCPClient();
+      bool openUDPServer();
+      bool openUDPClient();
   };
 };
