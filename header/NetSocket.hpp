@@ -34,6 +34,7 @@ namespace FRPC
         private:
           int linkfd;
           sockaddr_in6 address;
+          NetSocket* father;
       };
       AcceptObj accept();
     private:
