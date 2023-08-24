@@ -21,3 +21,7 @@ bool close(){
   if (end == -1) return false;
   return true;
 }
+bool FPRC::NetSocket::openTCPServer()
+{
+  
+}
