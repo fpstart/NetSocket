@@ -1,7 +1,13 @@
 #include <../header/NetSocket.hpp>
-NetSocket(){}
+NetSocket()
+{
+  int opt=SO_REUSEADDR;
+  bzero(&(this.address),sizeof(this.address));
+}
 NetSocket(sockaddr_in6 addr)
 {
+  int opt=SO_REUSEADDR;
+  bzero(&(this.address),sizeof(this.address));
   this.address = addr;
 }
 bool FPRC::NetSocket::setConfig(bool isUDP,bool isServer)
