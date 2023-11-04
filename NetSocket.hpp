@@ -9,7 +9,8 @@ namespace zeroref{
   class TCPSocketServer : public BasicSocket{
     friend class SocketObj;
     public:
-    virtual TCPSocketServer(struct sockaddr_in6 addr);
+    enum Opt{LISTEN=0,NONE=1}
+    virtual TCPSocketServer(struct sockaddr_in6 addr,);
     virtual TCPSocketServer(TCPSocketServer&& src);
     virtual &TCPSocketServer operator=(TCPSocketServer&& rhs);
     virtual TCPSocketServer(TCPSocketServer& src)=delete;
