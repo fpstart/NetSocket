@@ -10,7 +10,10 @@ namespace zeroref{
     friend class SocketObj;
     public:
     virtual TCPSocketServer(struct sockaddr_in6 addr);
-    virtual TCPSocketServer();
+    virtual TCPSocketServer(TCPSocketServer&& src);
+    virtual &TCPSocketServer operator=(TCPSocketServer&& rhs);
+    virtual TCPSocketServer(TCPSocketServer& src)=delete;
+    virtual &TCPSocketServer operator=(TCPSocketServer& rhs)=delete;
     virtual ~TCPSocketServer();
   };
 };
