@@ -14,6 +14,7 @@ namespace zeroref{
     virtual &TCPSocketServer operator=(TCPSocketServer&& rhs);
     virtual TCPSocketServer(TCPSocketServer& src)=delete;
     virtual &TCPSocketServer operator=(TCPSocketServer& rhs)=delete;
+    virtual  void listen();
     virtual ~TCPSocketServer();
   };
 };
