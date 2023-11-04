@@ -25,5 +25,6 @@ namespace zeroref{
     private:
     int mSockfd;
     int mListenfd;
+    struct sockaddr_in6 mAddress;
   };
 };
