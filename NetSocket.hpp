@@ -6,5 +6,7 @@ namespace zeroref{
     virtual void mSendMsg(&SocketObj sobj)=0;
     virtual void mWriteMsg(&SocketObj sobj)=0;
   };
-  class TCPSocketServer : public BasicSocket{}
-}
+  class TCPSocketServer : public BasicSocket{
+    
+  };
+};
