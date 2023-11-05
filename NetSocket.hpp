@@ -31,5 +31,14 @@ namespace zeroref{
   class SocketObj{
     friend class BasicSocket;
     friend class TCPSocketServer;
+    public:
+    virtual SocketObj(SocketObj&& src);
+    virtual &SocketObj operator=(SocketObj&& rhs);
+    virtual SocketObj(SocketObj& src)=delete;
+    virtual &SocketObj operator=(SocketObj& rhs)=delete;
+    virtual &SocketObj operator<< (const char byte);
+    virtual &SocketObj operator<< (const char* data);
+    virtual &SocketObj operator>> (char*& target);
+    
   };
 };
