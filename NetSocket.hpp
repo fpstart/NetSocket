@@ -1,3 +1,5 @@
+#include <deque>
+#include <queue>
 namespace zeroref{
   class SocketObj;
   class BasicSocket{
