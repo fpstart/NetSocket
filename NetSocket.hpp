@@ -5,6 +5,8 @@ namespace zeroref{
     protected:
     virtual void mSendMsg(&SocketObj sobj)=0;
     virtual void mWriteMsg(&SocketObj sobj)=0;
+    private:
+    struct sockaddr_in6 mAddress;
   };
   class TCPSocketServer : public BasicSocket{
     friend class SocketObj;
