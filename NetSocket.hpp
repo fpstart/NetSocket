@@ -39,6 +39,7 @@ namespace zeroref{
     virtual SocketObj(SocketObj& src)=delete;
     virtual &SocketObj operator=(SocketObj& rhs)=delete;
     virtual sockaddr_in6 getAddr();
+    virtual void shutdown();
     virtual &SocketObj operator<< (const char byte);
     virtual &SocketObj operator<< (const char* data);
     virtual &SocketObj operator>> (char*& target);
