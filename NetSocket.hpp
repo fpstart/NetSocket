@@ -50,4 +50,6 @@ namespace zeroref{
     int mClientid;
     struct sockaddr_in6 mAddress;
   };
+  
+  struct sockaddr_in6 operator""  _addr(const char* data);
 };
