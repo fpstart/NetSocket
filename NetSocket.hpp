@@ -39,6 +39,10 @@ namespace zeroref{
     virtual &SocketObj operator<< (const char byte);
     virtual &SocketObj operator<< (const char* data);
     virtual &SocketObj operator>> (char*& target);
-    
+    private:
+    virtual SocketObj(int clientid,struct sockaddr_in6 address,BasicSocket* super);
+    BasicSocket* mSuper;
+    int mClientid;
+    struct sockaddr_in6 mAddress;
   };
 };
