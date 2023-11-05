@@ -44,7 +44,7 @@ namespace zeroref{
     virtual &SocketObj operator>> (char*& target);
     private:
     virtual SocketObj(int clientid,struct sockaddr_in6 address,BasicSocket* super);
-    std::queue<char> mSendList;
+    std::queue<char> mReadList;
     std::queue<char> nWriteList;
     BasicSocket* mSuper;
     int mClientid;
