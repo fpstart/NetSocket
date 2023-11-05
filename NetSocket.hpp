@@ -27,4 +27,9 @@ namespace zeroref{
     int mListenfd;
     struct sockaddr_in6 mAddress;
   };
+  
+  class SocketObj{
+    friend class BasicSocket;
+    friend class TCPSocketServer;
+  };
 };
