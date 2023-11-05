@@ -1,7 +1,14 @@
 #include <deque>
 #include <queue>
 #include <exception>
+#include <stdexcept>
 namespace zeroref{
+  class socket_error :public runtime_error{
+    public:
+    const char* what();
+    const sockaddr_in6 local_addr();
+    const sockaddr_in6 target_addr();
+  };
   class SocketObj;
   class BasicSocket{
     friend class SocketObj;
