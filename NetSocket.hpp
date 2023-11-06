@@ -10,7 +10,7 @@ namespace zeroref{
     const sockaddr_in6 local_addr;
     const sockaddr_in6 target_addr;
     ErrorType error;
-    private:
+    private
     char* what;
   };
   class SocketObj;
@@ -31,8 +31,6 @@ namespace zeroref{
     virtual &TCPSocketServer operator=(TCPSocketServer& rhs)=delete;
     virtual void listen();
     virtual void shutdown();
-    virtual void send();
-    virtual void clear();
     virtual SocketObj accept();
     virtual ~TCPSocketServer();
     protected:
@@ -54,6 +52,8 @@ namespace zeroref{
     virtual &SocketObj operator=(SocketObj& rhs)=delete;
     virtual sockaddr_in6 getAddr();
     virtual void shutdown();
+    virtual void send();
+    virtual void clear();
     virtual &SocketObj operator<< (const char byte);
     virtual &SocketObj operator<< (const char* data);
     virtual &SocketObj operator>> (char*& target);
