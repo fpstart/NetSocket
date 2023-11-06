@@ -56,7 +56,8 @@ namespace zeroref{
     virtual void clear();
     virtual &SocketObj operator<< (const char byte);
     virtual &SocketObj operator<< (const char* data);
-    virtual &SocketObj operator>> (char*& target);
+    virtual &SocketObj operator>> (char& byte);
+    virtual &SocketObj operator>> (std::string& str);
     private:
     virtual SocketObj(int clientid,struct sockaddr_in6 address,BasicSocket* super);
     std::queue<char> mReadList;
