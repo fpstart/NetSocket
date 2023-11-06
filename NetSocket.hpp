@@ -2,6 +2,7 @@
 #include <queue>
 #include <exception>
 #include <stdexcept>
+#include <string>
 namespace zeroref{
   class socket_error :public runtime_error{
     public:
@@ -56,6 +57,7 @@ namespace zeroref{
     virtual void clear();
     virtual &SocketObj operator<< (const char byte);
     virtual &SocketObj operator<< (const char* data);
+    virtual &SocketObj operator<< (const std::string data);
     virtual &SocketObj operator>> (char& byte);
     virtual &SocketObj operator>> (std::string& str);
     private:
