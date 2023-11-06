@@ -10,7 +10,7 @@ namespace zeroref{
     const sockaddr_in6 local_addr;
     const sockaddr_in6 target_addr;
     ErrorType error;
-    private
+    private:
     char* what;
   };
   class SocketObj;
