@@ -5,9 +5,11 @@
 namespace zeroref{
   class socket_error :public runtime_error{
     public:
+    enum ErrorType{SocketError=0,BindError,IOError,CloseError};
     const char* what();
-    const sockaddr_in6 local_addr();
-    const sockaddr_in6 target_addr();
+    const sockaddr_in6 local_addr;
+    const sockaddr_in6 target_addr;
+    ErrorType error;
   };
   class SocketObj;
   class BasicSocket{
