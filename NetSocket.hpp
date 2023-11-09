@@ -3,6 +3,7 @@
 #include <exception>
 #include <stdexcept>
 #include <string>
+#include <iostream>
 namespace zeroref{
   class socket_error :public runtime_error{
     public:
@@ -43,30 +44,14 @@ namespace zeroref{
     struct sockaddr_in6 mAddress;
   };
   
-  class SocketObj{
+  class SocketObj:public iostream{
     friend class BasicSocket;
     friend class TCPSocketServer;
     public:
-    virtual SocketObj(SocketObj&& src);
-    virtual &SocketObj operator=(SocketObj&& rhs);
-    virtual SocketObj(SocketObj& src)=delete;
-    virtual &SocketObj operator=(SocketObj& rhs)=delete;
-    virtual sockaddr_in6 getAddr();
-    virtual void shutdown();
-    virtual void send();
-    virtual void clear();
-    virtual &SocketObj operator<< (const char byte);
-    virtual &SocketObj operator<< (const char* data);
-    virtual &SocketObj operator<< (const std::string data);
-    virtual &SocketObj operator>> (char& byte);
-    virtual &SocketObj operator>> (std::string& str);
-    private:
-    virtual SocketObj(int clientid,struct sockaddr_in6 address,BasicSocket* super);
-    std::queue<char> mReadList;
-    std::queue<char> nWriteList;
-    BasicSocket* mSuper;
-    int mClientid;
-    struct sockaddr_in6 mAddress;
+    protected:
+    class SocketBuf:public streambuf{
+      
+    };
   };
   
   struct sockaddr_in6 operator""  _addr(const char* data);
