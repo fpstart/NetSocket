@@ -1,6 +1,7 @@
 #ifndef __SOCKET_ZEROSRP_H__
 #define SOCKET_TYPE int
 #define SOCKET_ADDR sockaddr_in6
+#define SInfo struct SocketInfo
 #include <string>
 namespace ZSRP
 {
@@ -24,6 +25,16 @@ namespace ZSRP
        *@prama[out] buf 接受的数据
        */
       virtual void readMsg(SInfo obj,string& buf) = 0;
+      /**
+       * @brief 父类提供的访问方法
+       * @prama[in] buf 发送的数据
+       */
+       static void SuWrite(BasicSocketIO& cls,SInfo obj,string& buf){cls.writeMsg(obj,buf)};
+      /**
+       * @brief 父类提供的访问方法
+       * @prama[out] buf 接受的数据
+       */
+       static void SuRead(BasicSocketIO& cls,SInfo obj,string& buf){cls.readMsg(obj,buf)};
   }；
 };
 #define __SOCKET_ZEROSRP_H__
